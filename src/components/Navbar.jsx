@@ -6,17 +6,17 @@ function Navbar() {
         <nav>
             <ul>
                 <li>
-                    <NavLink to="/" activeClassName="active">
+                    <NavLink to="/">
                         HomePage
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about" activeClassName="active">
+                    <NavLink to="/about">
                         AboutUs
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/posts" activeClassName="active">
+                    <NavLink to="/posts">
                         PostList
                     </NavLink>
                 </li>
