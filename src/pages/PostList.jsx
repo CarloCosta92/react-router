@@ -19,15 +19,25 @@ function PostList() {
 
 
     return (
-        <div>
-            <h1>Lista dei Post</h1>
-            <ul>
+
+        <div className='container-fluid'>
+            <h1 className='text-center p-4'>Lista dei Post</h1>
+            <div className='container row m-auto'>
                 {posts.map(post => (
-                    <li key={post.id}>
-                        <Link to={`/posts/${post.id}`}>{post.title}</Link>
-                    </li>
+
+                    <div className="card col-4" key={post.id}>
+                        <div className="card-body">
+                            <h5 className="card-title">{post.title}</h5>
+
+                            <p className="card-text">{post.body}</p>
+
+                            <Link to={`/posts/${post.id}`} className="text-decoration-none link-underline-opacity-100-hover">Vai al dettaglio del post</Link>
+
+                        </div>
+                    </div>
+
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

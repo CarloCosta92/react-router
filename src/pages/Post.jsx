@@ -47,15 +47,15 @@ function Post() {
     }
     // in ultimo mostra risultato
     return (
-        <div>
-            <h2>{post.title}</h2>
+        <div className='text-center'>
+            <h2 className="p-3">{post.title}</h2>
             <p>{post.body}</p>
-            //post precedente
-            <button><Link to={`/posts/${prevPost}`}>Post precedente</Link></button>
-            //post successivo
-            <button><Link to={`/posts/${nextPost}`}>Post successivo</Link></button>
-            // torna ai post
-            <button><Link to={`/posts`}>Torna a tutti i post</Link></button>
+
+            <button className='btn btn-primary m-2'><Link to={`/posts/${prevPost}`} className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Post precedente</Link></button>
+
+            <button className='btn btn-primary m-2'><Link to={`/posts/${nextPost}`} className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Post successivo</Link></button>
+
+            <button className='btn btn-primary m-2'><Link to={`/posts`} className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Torna a tutti i post</Link></button>
         </div>
     );
 }

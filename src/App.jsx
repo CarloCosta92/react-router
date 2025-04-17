@@ -1,4 +1,4 @@
-import './App.css'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 //importo il layout dove dentro c'è la logoca della navbar
 import DefaultLayout from './components/DefaultLayout'
@@ -7,6 +7,8 @@ import HomePage from './pages/Home'
 import AboutUs from './pages/About'
 import PostList from './pages/PostList'
 import Post from './pages/Post'
+//importo bootstrap
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
 
