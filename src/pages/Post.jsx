@@ -2,10 +2,12 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Post() {
 
-    const { postId } = useParams();
+    let { postId } = useParams();
+    postId = parseInt(postId)
     const [post, setPost] = useState(null);
     // variabile del caricamento,serve perchè altrimenti verrebbe caricato prima il render della chiamata api
     const [loading, setLoading] = useState(true);
@@ -13,6 +15,9 @@ function Post() {
     const [error, setError] = useState(null);
 
     const endpoint = "https://jsonplaceholder.typicode.com/posts/";
+
+    const nextPost = postId + 1
+    const prevPost = ((postId - 1) <= 0) ? postId : (postId - 1);
 
     useEffect(() => {
         setLoading(true);
@@ -45,6 +50,8 @@ function Post() {
         <div>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
+            <button><Link to={`/posts/${prevPost}`}>Post precedente</Link></button>
+            <button><Link to={`/posts/${nextPost}`}>Post successivo</Link></button>
         </div>
     );
 }
