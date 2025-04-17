@@ -50,8 +50,12 @@ function Post() {
         <div>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
+            //post precedente
             <button><Link to={`/posts/${prevPost}`}>Post precedente</Link></button>
+            //post successivo
             <button><Link to={`/posts/${nextPost}`}>Post successivo</Link></button>
+            // torna ai post
+            <button><Link to={`/posts`}>Torna a tutti i post</Link></button>
         </div>
     );
 }
